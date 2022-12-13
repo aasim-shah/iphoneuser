@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require("path");
 const collections = require('../models/booksModel')
 const bodyparser = require('body-parser'); 
-const dbConnection = require('../controllers/db/dbConnction')
+const dbConnection = require('../db/dbConnction')
 
 
 
