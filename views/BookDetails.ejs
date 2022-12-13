@@ -1,0 +1,36 @@
+<%- include('./partials/Header.ejs')%>
+<%- include('./partials/Navbar.ejs')%>
+
+    <div class="grid grid-cols-12">
+      <div class="col-span-12 sm:col-span-3 bg-gray-200">
+        <%- include('./partials/Sidebar.ejs')%>
+      </div>
+
+
+      <div class="col-span-12 sm:col-span-9">
+
+        <!-- Card -->
+        <h1 style="text-align: center"><b>Book Details</b></h1>
+        <!-- Info of the book -->
+        <% if(book) { %>
+          <div class="card w-full  py-2 px-2 border-blue-300 flex flex-col">
+            <img
+            src="/assets/1.png"
+            class="w-[30rem]  mx-auto"
+            alt="Card image"
+            />
+            <div class="card-body">
+              <h4 class="text-xl font-bold text-green-400 my-2 mx-3"><%= book.name %> </h4>
+              <p class="text-md font-semibold mx-3 text-red-300">by :  <%= book.author_name %></p>
+              <p class="px-3  mt-2">
+                <%= book.description %>
+              </p>
+            </div>
+          </div>
+          <%  }; %>
+        </div>
+        </div>
+        <%- include('./partials/Footer.ejs')%>
+
+  </body>
+</html>

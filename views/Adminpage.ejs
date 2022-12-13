@@ -1,0 +1,45 @@
+<%- include('./partials/Header.ejs')%>
+<%- include('./partials/Navbar.ejs')%>
+
+    <div class="grid grid-cols-12">
+      <div class="col-span-12 sm:col-span-3 bg-gray-200">
+        <%- include('./partials/Sidebar.ejs')%>
+      </div>
+
+      <!-- Center Horizontal and Vertical -->
+      <div class="col-span-12 sm:col-span-9 bg-gray-100">
+    <div >
+      <p class="text-2xl text-green-500 font-black my-6 text-center">Admin </p>
+      <table >
+        
+          <tr>
+            <td  class="px-8 pb-3"><p class="">id </p></td>
+            <td  class="px-8 pb-3"><p class="">name </p></td>
+            <td class="px-8 pb-3"><p class="">author </p></td>
+            <td  class="px-8 pb-3"><p class="">Edit </p></td>
+            <td class="px-8 pb-3"><p class="">Delete </p></td>
+     
+      
+        <% characters.forEach(function(character) { %>
+          
+          <tr>
+            <td class="px-6 py-2 border"><p><%= character._id %> </p></td>
+            <td class="px-6 py-2 border"><p class=""><%= character.name %></p></td>
+            <td class="px-6 py-2 border"><p class=""><%= character.author_name %> </p></td>
+            <td class="px-6 py-2 border"><a class="py-1 px-2 bg-yellow-400 rounded-md" href="./edit/<%= character._id %>">edit</a></td>
+            <td class="px-6 py-2 border"><a class="py-1 px-2 bg-red-400 rounded-md "
+              href="/delete/<%= character._id %>"  onclick="return confirm('Are you sure??');">Delete</a></td>
+          </tr>
+        <tr>
+          
+        <%  }); %>
+        
+      </table>
+    </div>
+    </div>
+    </div>
+
+    <%- include('./partials/Footer.ejs')%>
+
+  </body>
+</html>

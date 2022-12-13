@@ -1,0 +1,39 @@
+<%- include('./partials/Header.ejs')%>
+<%- include('./partials/Navbar.ejs')%>
+
+    <div class="grid grid-cols-12">
+      <div class="col-span-12 sm:col-span-3 bg-gray-200">
+        <%- include('./partials/Sidebar.ejs')%>
+      </div>
+
+
+      <div class="col-span-12 sm:col-span-9">
+        <div style=" padding: 1px 16px; height: 100%" >
+          <p class="text-2xl text-green-500 font-black my-6 text-center">Books List</p>
+       
+            <% books.forEach(function(book) { %>
+              
+            
+         
+                <div class="flex flex-row mt-3 border rounded-md border-blue-300 py-1 px-2" >
+                  <a
+                    href="./book/<%= book._id %>"
+                    ><img src="assets/1.png" width="200" height="200"
+                  /></a>
+                  <div class="right ml-3">
+                    
+                    <p class="text-xl font-bold"> <%= book.name %></p>
+                    <p class="text-sm text-green-400">by : <%= book.author_name %></p>
+                    
+                  </div>
+                </div>
+             
+            <%  }); %>
+            
+        </div>
+      </div>
+    </div>
+        <%- include('./partials/Footer.ejs')%>
+
+  </body>
+</html>
