@@ -15,18 +15,22 @@
               
             
          
-                <div class="flex flex-row mt-3 border rounded-md border-blue-300 py-1 px-2" >
-                  <a
-                    href="./book/<%= book._id %>"
-                    ><img src="assets/1.png" width="200" height="200"
-                  /></a>
+                <div class="flex flex-row mt-3  border rounded-md border-blue-300 py-1 px-2" >
+                 <div class="grid grid-cols-12">
+                 <div class="col-span-12 sm:col-span-4">
+                  <a 
+                  href="./book/<%= book._id %>"
+                  ><img src="assets/1.png" class=" w-[20rem] h-[12rem]"/></a>
+                 </div>
+                 <div class="col-span-12 sm:col-span-8">
                   <div class="right ml-3">
-                    
                     <p class="text-xl font-bold"> <%= book.name %></p>
                     <p class="text-sm text-green-400">by : <%= book.author_name %></p>
                     <p class="text-sm text-gray-700 px-2 mt-3"><%= book.description %></p>
                     
                   </div>
+                 </div>
+                 </div>
                 </div>
              
             <%  }); %>
